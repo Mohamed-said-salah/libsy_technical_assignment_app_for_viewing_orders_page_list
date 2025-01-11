@@ -78,39 +78,113 @@ class Item extends Equatable {
         isLibsyPick = json['is_libsy_pick'],
         isTrend = json['is_trend'];
 
+  /// Converts the `Item` object into a `Map<String, dynamic>` representation.
+  ///
+  /// The resulting map includes the following fields:
+  /// - `id`: The unique identifier of the item.
+  /// - `owner`: The owner of the item, serialized as a map if not null.
+  /// - `description`: The description of the item.
+  /// - `price`: The price of the item.
+  /// - `size`: The size of the item, serialized as a map if not null.
+  /// - `color`: The color of the item, serialized as a map if not null.
+  /// - `brand`: The brand of the item.
+  /// - `material`: The material of the item.
+  /// - `likes`: A list of likes (integers) associated with the item.
+  /// - `condition`: The condition of the item, serialized as a map if not null.
+  /// - `category`: The category of the item, serialized as a map if not null.
+  /// - `created_at`: The creation date of the item, in ISO-8601 string format if available.
+  /// - `updated_at`: The last update date of the item, in ISO-8601 string format if available.
+  /// - `is_sold`: A boolean indicating if the item is sold.
+  /// - `is_liked`: A boolean indicating if the item is liked.
+  /// - `images`: A list of images, serialized as maps if not null.
+  /// - `tags`: A list of tags associated with the item.
+  /// - `is_libsy_pick`: A boolean indicating if the item is a Libsy pick.
+  /// - `is_trend`: A boolean indicating if the item is trending.
+
+  /// Converts the `Item` object into a `Map<String, dynamic>` representation.
+  ///
+  /// The resulting map includes the following fields:
+  /// - `id`: The unique identifier of the item.
+  /// - `owner`: The owner of the item, serialized as a map if not null.
+  /// - `description`: The description of the item.
+  /// - `price`: The price of the item.
+  /// - `size`: The size of the item, serialized as a map if not null.
+  /// - `color`: The color of the item, serialized as a map if not null.
+  /// - `brand`: The brand of the item.
+  /// - `material`: The material of the item.
+  /// - `likes`: A list of likes (integers) associated with the item.
+  /// - `condition`: The condition of the item, serialized as a map if not null.
+  /// - `category`: The category of the item, serialized as a map if not null.
+  /// - `created_at`: The creation date of the item, in ISO-8601 string format if available.
+  /// - `updated_at`: The last update date of the item, in ISO-8601 string format if available.
+  /// - `is_sold`: A boolean indicating if the item is sold.
+  /// - `is_liked`: A boolean indicating if the item is liked.
+  /// - `images`: A list of images, serialized as maps if not null.
+  /// - `tags`: A list of tags associated with the item.
+  /// - `is_libsy_pick`: A boolean indicating if the item is a Libsy pick.
+  /// - `is_trend`: A boolean indicating if the item is trending.
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
+
+    // Add the unique identifier
     data['id'] = id;
+
+    // Serialize the owner if not null
     if (owner != null) {
       data['owner'] = owner!.toJson();
     }
+
+    // Add description and price
     data['description'] = description;
     data['price'] = price;
+
+    // Serialize size if not null
     if (size != null) {
       data['size'] = size!.toJson();
     }
+
+    // Serialize color if not null
     if (color != null) {
       data['color'] = color!.toJson();
     }
+
+    // Add brand and material
     data['brand'] = brand;
     data['material'] = material;
+
+    // Add likes
     data['likes'] = likes;
+
+    // Serialize condition if not null
     if (condition != null) {
       data['condition'] = condition!.toJson();
     }
+
+    // Serialize category if not null
     if (category != null) {
       data['category'] = category!.toJson();
     }
+
+    // Add created and updated timestamps
     data['created_at'] = createdAt?.toUtc().toIso8601String();
     data['updated_at'] = updatedAt?.toUtc().toIso8601String();
+
+    // Add sale and like status
     data['is_sold'] = isSold;
     data['is_liked'] = isLiked;
+
+    // Serialize images if not null
     if (images != null) {
       data['images'] = images!.map((v) => v.toJson()).toList();
     }
+
+    // Add tags
     data['tags'] = tags;
+
+    // Add special item indicators
     data['is_libsy_pick'] = isLibsyPick;
     data['is_trend'] = isTrend;
+
     return data;
   }
 
@@ -152,6 +226,10 @@ class ItemSize extends Equatable {
         isFollowed = json['is_followed'],
         count = json['count'];
 
+  /// Converts this object into a jsonifiable map.
+  ///
+  /// Returns a map with keys: id, name, is_followed, count.
+  /// The values are the corresponding properties of this object.
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['id'] = id;
@@ -184,6 +262,15 @@ class ItemColor extends Equatable {
         code = json['code'],
         count = json['count'];
 
+  /// Converts this [ItemColor] into a jsonifiable map.
+  ///
+  /// This method is the inverse of [ItemColor.fromJson].
+  ///
+  /// Returns a map with keys 'id', 'name', 'code', and 'count'.
+  /// The values are the corresponding properties of this object.
+  ///
+  /// The resulting map can be used to serialize this object into a JSON
+  /// string.
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['id'] = id;
@@ -219,13 +306,36 @@ class Condition extends Equatable {
         order = json['order'],
         count = json['count'];
 
+  /// Converts this [Condition] instance into a [Map] for JSON serialization.
+  ///
+  /// The resulting map includes:
+  /// - 'id': The unique identifier of the condition.
+  /// - 'name': The name of the condition.
+  /// - 'display_name': The display name of the condition.
+  /// - 'order': The order of the condition.
+  /// - 'count': The count associated with the condition.
+  ///
+  /// Returns a [Map] with keys corresponding to the fields of this instance.
+  ///
+  /// This method is the inverse of [Condition.fromJson].
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
+
+    /// The unique identifier of the condition.
     data['id'] = id;
+
+    /// The name of the condition.
     data['name'] = name;
+
+    /// The display name of the condition.
     data['display_name'] = displayName;
+
+    /// The order of the condition.
     data['order'] = order;
+
+    /// The count associated with the condition.
     data['count'] = count;
+
     return data;
   }
 
@@ -251,6 +361,17 @@ class Category extends Equatable {
         name = json['name'],
         parent = json['parent'];
 
+  /// Converts this [Category] object into a [Map] for JSON serialization.
+  ///
+  /// The resulting map will have three keys: 'id', 'name', and 'parent'. These
+  /// keys will contain the corresponding properties of this object.
+  ///
+  /// This is the inverse of [Category.fromJson].
+  ///
+  /// Returns a [Map] with keys 'id', 'name', and 'parent' containing
+  /// the corresponding properties of this object. The resulting [Map] can
+  /// be used to serialize this object into a JSON string.
+  @override
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['id'] = id;
@@ -337,6 +458,19 @@ class Brand extends Equatable {
         followersCount = json['followers_count'],
         isFollowed = json['is_followed'];
 
+  /// Converts this [Brand] instance into a jsonifiable map.
+  ///
+  /// The resulting map includes the following keys:
+  /// - 'id': The unique identifier of the brand.
+  /// - 'slug': A unique slug for the brand.
+  /// - 'name': The name of the brand.
+  /// - 'count': The count associated with the brand.
+  /// - 'followers_count': The number of followers the brand has.
+  /// - 'is_followed': A boolean indicating if the brand is followed.
+  ///
+  /// This map can be used to serialize this object into a JSON string.
+  ///
+  /// [toJson] is the inverse of [Brand.fromJson].
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['id'] = id;

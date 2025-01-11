@@ -22,6 +22,20 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
       PageController(); // Controller for PageView
 
   @override
+
+  ///
+  /// Builds a [Scaffold] widget displaying the details of a single [Order] item.
+  ///
+  /// The screen is divided into two sections: Item Details and Order Details.
+  ///
+  /// The Item Details section displays the item's images, likes, price, description,
+  /// tags, brand, condition, and category.
+  ///
+  /// The Order Details section displays the order's original price, price, fee
+  /// percentage, fixed fee, fee amount, shipping cost, final price, and status.
+  ///
+  /// The screen uses a [SingleChildScrollView] to enable vertical scrolling, and
+  /// a [PageView] to enable horizontal scrolling of the images.
   Widget build(BuildContext context) {
     final imagesLength = widget.order.item?.images?.length ?? 0;
 

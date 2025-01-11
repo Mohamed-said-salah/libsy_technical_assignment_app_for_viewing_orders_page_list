@@ -54,6 +54,28 @@ class Order extends Equatable {
         shipbluDeliveryId = json['shipblu_delivery_id'],
         status = json['status'];
 
+  /// Converts the `Order` object into a `Map<String, dynamic>` representation.
+  ///
+  /// The resulting map includes the following fields:
+  /// - `id`: The unique identifier of the order.
+  /// - `item`: The item associated with the order, serialized as a map if not null.
+  /// - `buyer`: The identifier of the buyer.
+  /// - `buyer_profile`: The profile of the buyer, serialized as a map if not null.
+  /// - `original_price`: The original price of the item.
+  /// - `price`: The final selling price of the item.
+  /// - `shipping_cost`: The cost of shipping.
+  /// - `fixed_fee`: The fixed fee associated with the order.
+  /// - `fee_percentage`: The percentage fee applied to the order.
+  /// - `final_price`: The final price after fees and shipping are applied.
+  /// - `fee_amount`: The total fee amount.
+  /// - `shipblu_pickup_id`: The Shipblu pickup identifier.
+  /// - `shipblu_delivery_id`: The Shipblu delivery identifier.
+  /// - `status`: The current status of the order.
+  ///
+  /// This method is the inverse of [Order.fromJson].
+  ///
+  /// Returns a [Map] with the above fields as keys, and the corresponding
+  /// values of this object.
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['id'] = id;

@@ -41,6 +41,23 @@ class Profile {
         isFollowing = json['is_following'],
         isExistingSeller = json['is_existing_seller'];
 
+  /// Converts the `Profile` object into a `Map<String, dynamic>` representation.
+  ///
+  /// The resulting map includes the following fields:
+  /// - `id`: The unique identifier of the profile.
+  /// - `profile_picture`: The URL of the profile picture.
+  /// - `bio`: The biography of the user.
+  /// - `username`: The username of the profile.
+  /// - `full_name`: The full name of the user.
+  /// - `is_verified`: A boolean indicating if the profile is verified.
+  /// - `total_followers`: The total number of followers.
+  /// - `total_following`: The total number of users the profile is following.
+  /// - `average_rating`: The average rating of the profile.
+  /// - `num_ratings`: The number of ratings received.
+  /// - `is_following`: A boolean indicating if the profile is being followed by the current user.
+  /// - `is_existing_seller`: A boolean indicating if the profile belongs to an existing seller.
+  ///
+  /// This map can be used to serialize this object into a JSON string.
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['id'] = id;

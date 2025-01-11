@@ -18,6 +18,16 @@ class OrdersResponse extends Equatable {
             ? List.from(json['sales']).map((v) => Order.fromJson(v)).toList()
             : [];
 
+  /// Converts this [OrdersResponse] to a Map for JSON serialization.
+  ///
+  /// The resulting map will have two keys: 'purchases' and 'sales'. These keys
+  /// will contain lists of maps, which are the json representations of the
+  /// [Order]s in the respective lists.
+  ///
+  /// This is the inverse of [OrdersResponse.fromJson].
+  ///
+  /// Returns a [Map] with keys 'purchases' and 'sales' containing
+  /// [List]s of the json representations of the [Order]s in the respective lists.
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['purchases'] = purchases.map((v) => v.toJson()).toList();

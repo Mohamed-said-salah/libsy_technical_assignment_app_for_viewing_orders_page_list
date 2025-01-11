@@ -13,6 +13,14 @@ class OrdersScreen extends StatelessWidget {
   });
 
   @override
+
+  /// Builds the OrdersScreen widget, which displays a tabbed interface for
+  /// viewing user orders. The screen includes an AppBar with a TabBar for
+  /// switching between "Purchases" and "Sales" views. Each tab displays a
+  /// list of orders using a `BlocBuilder` to manage state. The purchases
+  /// and sales lists are populated with `OrderTile` widgets, and a shimmer
+  /// effect is shown while data is loading.
+
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
