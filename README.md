@@ -27,7 +27,7 @@ This Flutter application is a solution for the Libsy Technical Assignment. It im
  * Android Studio
 
 ## Get the App 📱
- * Get the apk of the app from [**Drive**](https://drive.google.com/file/d/1mUKyTPygvfdWe33nLk1Q_TXUvot1iPRU/view?usp=sharing)
+ * Get the apk of the app from [**Drive**](https://drive.google.com/file/d/1V77PYdKEGMHkYxTHXW71Lzk7hnPfA5-E/view?usp=sharing)
 
 ## Setup 💽
 To get a local copy up and running, follow these instructions.
