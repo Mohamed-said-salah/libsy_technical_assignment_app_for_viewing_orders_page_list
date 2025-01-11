@@ -68,6 +68,11 @@ Prerequisites
     └── lib/
         ├── api/
         │   └── order_api.dart
+        ├── core/
+        │   ├── router/...
+        │   └── theme/
+        │       ├── app_colors.dart
+        │       └── text_styles.dart
         ├── models/
         │   ├── responses/
         │   │   └── orders_response.dart
