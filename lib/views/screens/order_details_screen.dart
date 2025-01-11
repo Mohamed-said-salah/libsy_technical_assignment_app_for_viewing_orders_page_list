@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:libsy_technical_assignment/models/order.dart';
-import 'package:libsy_technical_assignment/views/screens/profile_tile.dart';
+import 'package:libsy_technical_assignment/views/widgets/tiles/profile_tile.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

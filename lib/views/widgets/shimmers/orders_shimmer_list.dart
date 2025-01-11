@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:libsy_technical_assignment/core/theme/text_styles.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import "package:flutter_screenutil/flutter_screenutil.dart";
@@ -60,29 +61,17 @@ class SkeletonOderTileShimmer extends StatelessWidget {
               SizedBox(height: 5.h),
               Text(
                 "Very Good",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey.shade700,
-                ),
+                style: TextStyles.bodyMedium,
               ),
               SizedBox(height: 5.h),
               Text(
                 "150 ❤️",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey.shade700,
-                ),
+                style: TextStyles.bodyMedium,
               ),
               SizedBox(height: 5.h),
               Text(
                 "Buyer ###### #####",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey.shade700,
-                ),
+                style: TextStyles.bodyMedium,
               ),
             ],
           ),
@@ -93,38 +82,22 @@ class SkeletonOderTileShimmer extends StatelessWidget {
               SizedBox(height: 5.h),
               Text(
                 "Brand  Prada",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey.shade700,
-                ),
+                style: TextStyles.bodyMedium,
               ),
               SizedBox(height: 5.h),
               Text(
                 "Sandals",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey.shade700,
-                ),
+                style: TextStyles.bodyMedium,
               ),
               SizedBox(height: 5.h),
               Text(
                 "Delivered",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey.shade700,
-                ),
+                style: TextStyles.bodyMedium,
               ),
               SizedBox(height: 5.h),
               Text(
                 "5.0  ⭐",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey.shade700,
-                ),
+                style: TextStyles.bodyMedium,
               ),
             ],
           ),

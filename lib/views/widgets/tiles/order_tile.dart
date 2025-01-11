@@ -6,6 +6,7 @@ import 'package:libsy_technical_assignment/models/order.dart';
 
 import 'package:fast_cached_network_image/fast_cached_network_image.dart';
 
+import '../../../core/theme/text_styles.dart';
 import '../../screens/order_details_screen.dart';
 
 class OrderTile extends StatelessWidget {
@@ -63,21 +64,13 @@ class OrderTile extends StatelessWidget {
                     Text(
                       order.item?.condition?.displayName ?? "",
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyles.bodyMedium,
                     ),
                     SizedBox(height: 5.h),
                     Text(
                       "${order.item?.likes?.length ?? ""} Likes",
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyles.bodyMedium,
                     ),
                     SizedBox(height: 5.h),
                     Text(
@@ -85,11 +78,7 @@ class OrderTile extends StatelessWidget {
                           ? "Seller ${order.item?.owner?.fullName ?? ""}"
                           : "Buyer ${order.buyerProfile?.fullName ?? ""}",
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyles.bodyMedium,
                     ),
                   ],
                 ),
@@ -101,47 +90,31 @@ class OrderTile extends StatelessWidget {
                   children: [
                     SizedBox(height: 5.h),
                     Text(
-                      "${order.item?.description ?? ""}",
+                      order.item?.description ?? "",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyles.bodyMedium,
                     ),
                     SizedBox(height: 5.h),
                     Text(
                       order.item?.category?.name ?? "",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyles.bodyMedium,
                     ),
                     SizedBox(height: 5.h),
                     Text(
                       order.status ?? "",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyles.bodyMedium,
                     ),
                     SizedBox(height: 5.h),
                     Text(
                       "${order.buyerProfile?.averageRating ?? ""}  ⭐",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyles.bodyMedium,
                     ),
                   ],
                 ),
